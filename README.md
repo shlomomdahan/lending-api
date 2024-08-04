@@ -74,27 +74,12 @@ This is the Gynger Lending API built with Node.js and PostgreSQL. Follow the ins
 
 ## Database Setup
 
-1. **Ensure PostgreSQL service is running:**
-
-   Make sure PostgreSQL service is running. If not, start the service using the appropriate command for your operating system:
-
-   - **Mac:**
-     ```
-     brew services start postgresql
-     ```
-   - **Windows:**
-     Start the PostgreSQL service from the Services management console.
-   - **Linux:**
-     ```
-     sudo systemctl start postgresql
-     ```
-
-2. **Create the `gynger_lending` database:**
+1. **Create the `gynger_lending` database:**
    ```
    createdb gynger_lending
    ```
 
-3. **Run the SQL commands from `database.sql` to create the tables:**
+2. **Run the SQL commands from `database.sql` to create the tables:**
    ```
    psql -d gynger_lending -f database.sql
    ```
