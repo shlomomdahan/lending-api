@@ -20,4 +20,14 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get("/", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM signers");
+    res.json(result.rows);
+  } catch (error) {
+    console.log("Error fetching signers");
+    res.status(500).json({ error: "Error fetching signers" });
+  }
+});
+
 module.exports = router;
