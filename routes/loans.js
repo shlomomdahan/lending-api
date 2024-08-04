@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
   try {
     const result = await pool.query(
       "INSERT INTO loans (principal_amount, fee_amount, is_active, signer_ids) VALUES ($1, $2, $3, $4) RETURNING *",
-      [principalAmount, feeAmount, isActive !== false, signerIds]
+      [principalAmount, feeAmount, isActive, signerIds]
     );
 
     console.log(`Loan created with ID: ${result.rows[0].id}`);

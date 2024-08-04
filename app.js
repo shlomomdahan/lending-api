@@ -1,6 +1,6 @@
-require("dotenv").config();
 const express = require("express");
 const app = express();
+const { verifyConnection } = require("./db");
 const port = 3000;
 
 const signersRoutes = require("./routes/signers");
@@ -13,12 +13,16 @@ app.use("/signers", signersRoutes);
 app.use("/loans", loansRoutes);
 app.use("/payments", paymentsRoutes);
 
+const startServer = async () => {
+  await verifyConnection();
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+  });
+};
+
+startServer();
+
 // Test route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to the Gynger Lending API" });
-});
-
-// Start server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
 });
