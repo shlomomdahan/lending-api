@@ -2,14 +2,6 @@
 
 This is the Gynger Lending API built with Node.js and PostgreSQL. Follow the instructions below to set up the project.
 
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Database Setup](#database-setup)
-- [Configuration](#configuration)
-- [Starting the Server](#starting-the-server)
-
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/)
